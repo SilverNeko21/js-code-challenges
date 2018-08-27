@@ -1,13 +1,13 @@
 var i;
-var n;
 var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 module.exports = function acceptableSequence(str) {
     for(i = 0; i < str.length; i++){
-       if (str.indexof(letters) !== "-1"){
-           
-       }
+        if (letters.indexOf(str[i]) !== -1){
+            if(str[i - 1] !== "+" || str[i + 1] !== "+") {
+                return false;
+            }
+        }
     }
-
-    console.log('str', str)
+    return true;
 };
